@@ -1,7 +1,13 @@
 puts "Beginning of Rakefile for testing"
 
 
-desc "This should be the default"
-  task :mydefault do
+#desc "This should be the default"
+#  task :default :spec
+#    puts "first test"
+#  end
+
+begin
+  task default: :spec
     puts "first test"
-  end
+  rescue LoadError
+end
